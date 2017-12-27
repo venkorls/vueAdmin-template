@@ -55,7 +55,27 @@ export const constantRouterMap = [
       }
     ]
   },
-
+  {
+    path: '/systemManage',
+    component: Layout,
+    redirect: '/systemManage/organize',
+    name: 'systemManage',
+    meta: { title: '系统管理', icon: 'example' },
+    children: [
+      {
+        path: 'organize',
+        name: 'Organize',
+        component: _import('organize/index'),
+        meta: { title: '机构管理', icon: 'table' }
+      },
+      {
+        path: 'role',
+        name: 'Role',
+        component: _import('role/index'),
+        meta: { title: '角色管理', icon: 'tree' }
+      }
+    ]
+  },
   {
     path: '/form',
     component: Layout,
